@@ -16,7 +16,8 @@ Usé macros en Xacro para definir componentes como las inercias y las uniones de
 ### Visualización en RViz
 En la primera parte veremos en el visualizador rviz2, las tfs del robot, y como se muestra correctamente. 
 
-![Screenshot from 2025-05-18 22-00-40](https://github.com/user-attachments/assets/d859ceeb-601a-4abd-aa13-5e9b61f6a812)
+![image](https://github.com/user-attachments/assets/7219992e-1038-4f36-a9e4-734ea890713b)
+
 
 ¡Hemos conseguido pasar el robot a ros2 y poder larnzarlo y visualizarlo con rviz!
 
