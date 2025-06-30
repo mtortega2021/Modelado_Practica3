@@ -1,35 +1,45 @@
 # Práctica 3: Integración y Simulación de Robots con ROS2, Gazebo y MoveIt2
 ## Introducción
 
-En esta práctica trabajé con el robot que diseñé en la práctica anterior y lo integré dentro de un entorno simulado con Gazebo. Además, configuré el sistema de control con MoveIt2 para poder ejecutar movimientos de tipo pick and place. La práctica está dividida en dos partes:
-    * Parte A: Configuración y modelado del robot en ROS2.
+En esta práctica se trabajó con el robot diseñado en la práctica anterior, integrándolo dentro de un entorno simulado con Gazebo. Además, se configuró el sistema de control mediante MoveIt 2 para ejecutar movimientos de tipo pick and place. La práctica se divide en dos partes:
+
+    * Parte A: Configuración y modelado del robot en ROS 2.
+
     * Parte B: Integración del robot en un entorno simulado y análisis del comportamiento dinámico durante una tarea de manipulación.
 
 ## Parte A – Configuración del robot en ROS2
-Empecé creando un paquete en ROS 2 con toda la descripción de mi robot.
-Modelo URDF con Xacro y cumplimiento de estándares REP-103 y REP-105
-Usé macros en Xacro para definir componentes como las inercias y las uniones del robot. El modelo tiene la jerarquía correcta, con base_footprint como padre de base_link. También añadí:
-* Una cámara en el efector final.
-* Una cámara frontal.
-* Un sensor IMU en el centro de la base.
+Se comenzó creando un paquete en ROS 2 que incluye toda la descripción del robot. El modelo se desarrolló en formato URDF utilizando Xacro, cumpliendo con los estándares REP-103 y REP-105. Se emplearon macros en Xacro para definir componentes como las inercias y las uniones del robot. El modelo presenta una jerarquía correcta, con base_footprint como padre de base_link.
+
+Además, se incorporaron los siguientes sensores:
+
+    * Una cámara en el efector final.
+
+    * Una cámara frontal.
+
+    * Un sensor IMU ubicado en el centro de la base.
 
 ### Visualización en RViz
-En la primera parte veremos en el visualizador rviz2, las tfs del robot, y como se muestra correctamente. 
-
+En esta primera parte, se visualizó correctamente el robot en el visor rviz2, incluyendo los transforms (TFs) del modelo.
 ![image](https://github.com/user-attachments/assets/7219992e-1038-4f36-a9e4-734ea890713b)
 
 
-¡Hemos conseguido pasar el robot a ros2 y poder larnzarlo y visualizarlo con rviz!
-
+Se logró portar el modelo del robot a ROS 2, pudiendo lanzarlo y visualizarlo satisfactoriamente en RViz.
 Ahora vamos a la segunda parte en la qu eentra el juego Moveit.
 ## Parte B – Simulación y análisis en Gazebo + MoveIt2
-En esta parte comencé creando todo el entorno para que fuera apto para poder cargarlo en Moveit. Esto nme supuso algunso problemas dadoq ue me decia qu eel paquete no estaba correctamente. 
-Despues de hacer varios ajustes conseguimos que en moveit se nos visualizara el robot.
+En esta segunda parte, se configuró el entorno para permitir su carga en MoveIt 2. Durante el proceso surgieron algunos inconvenientes, ya que inicialmente el sistema indicaba que el paquete no estaba correctamente configurado. Tras realizar varios ajustes, se consiguió que MoveIt reconociera y visualizara el robot.
 
 ![Screenshot from 2025-05-15 11-41-51](https://github.com/user-attachments/assets/ae7d8d62-10de-444d-8dce-d2ede1966b58)
 
-Ahora empezaremos a crear los grupos, uno para elm gripper y otro para el brazo scara.
-Lo que ocurre es que al hacer los cambios despues de crear el paquete no he conseguido poder lanzar el robot_gazebo.launch.py no se me lanza porque directamente no se me crea es como si no existiera. 
-Os entrego la practica con todos los documentos y codigos para que podais ver el trabajo que he reaizadp. me da miucha rabia no poder terminar el trabajo pero no logro solucionarlo. 
+Se comenzaron a definir los grupos de planificación necesarios: uno para el gripper y otro para el brazo tipo SCARA. Sin embargo, tras realizar algunos cambios en la estructura del paquete, surgieron problemas al intentar lanzar el archivo robot_gazebo.launch.py, ya que el sistema no lo reconocía o no se generaba correctamente.
+
+Aunque no se logró completar el proyecto en su totalidad, se entrega la práctica con todos los documentos y archivos de código desarrollados, como evidencia del trabajo realizado. A pesar del esfuerzo dedicado, no se consiguió resolver este último problema técnico, lo cual resultó especialmente frustrante.
+
+## Cambios
+Tras dar con el problema que no dejaba lanzar completamente los launchers, pudimos lanzar el launcher de los controladores y el de moveit que nos permite ya empezar a planear.
+Cuando fuimos a lanzar el launcher para poder lanzar el gazebo con el mundo proporcionado por los profesores, nos encontroamos con que por la version que tenemos ros_gz_brige es un packete que no encuenrrta, hemos intentado instalarlo pero por la vercion que tengo no me lo permite, o no he consedguido hacerlo.
+## Como continuaria
+Si todo funcionara correctamente, lanzariamos todos los launchers, y podrias empezar a teleoperar el robot, y realizar el plan mediante la herramienta de Moveit. 
+Realizariamos un ros bag record de la informacion de las fuerzas que realizan las articulaciones del brazo y con esa informacion podriamos graficarla. 
+
 
 
