@@ -46,11 +46,15 @@ aqui se muestra una imagen del ros2 bag en el cual recojo toda la informacion qu
 
 ## Video lanzamiento de launchers
 [Screencast from 07-04-2025 11:54:13 AM.webm](https://github.com/user-attachments/assets/a4e3dacd-7c0f-4c00-9ddc-2abbc66c5ef5)
+v![image](https://github.com/user-attachments/assets/bd81c7ef-1bf7-4eb2-b53d-9e75b88a289c)
 
 
 ## Como continuaria
 Si todo funcionara correctamente, lanzariamos todos los launchers, y podrias empezar a teleoperar el robot, y realizar el plan mediante la herramienta de Moveit. 
 Realizariamos un ros bag record de la informacion de las fuerzas que realizan las articulaciones del brazo y con esa informacion podriamos graficarla. 
+
+El problema que tiene el codigo es el ros_bridge esto ocurre porque mi version de ubuntu no esta actualizada al igual que en ros tengo la version de humble y esto hace que varias partes de la practica no funcionen correctamente. 
+
 
 
 
