@@ -63,6 +63,14 @@ v![image](https://github.com/user-attachments/assets/bd81c7ef-1bf7-4eb2-b53d-9e7
 Gazebo por los motivos que se explican, no se lanza, pero al intentar lanzar el laucnher podemos observar en esta captura que esta reconociendo todos los links del robot.
 ![image](https://github.com/user-attachments/assets/474e7071-edd9-43ac-91ed-a2aeac07a5cf)
 
+## Grafica cmd_vel
+![image](https://github.com/user-attachments/assets/dbc09668-958c-44fa-b168-8dc39fc9ead3)
+Tenemos la grafica de cmd, en la cual se muestra la velocidad que se va publicando en dicho topic. 
+No se porque no varia dado que meidante el comando de teleoperar mando velocidades al robot como se ve en la siguiente captura de pantalla.
+![Screenshot from 2025-07-04 13-53-19](https://github.com/user-attachments/assets/af61e353-459a-45a1-b65c-706eff082d4b)
+
+
+
 ## Como continuaria
 Si todo funcionara correctamente, lanzariamos todos los launchers, y podrias empezar a teleoperar el robot, y realizar el plan mediante la herramienta de Moveit. 
 Realizariamos un ros bag record de la informacion de las fuerzas que realizan las articulaciones del brazo y con esa informacion podriamos graficarla. 
