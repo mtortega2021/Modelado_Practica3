@@ -37,6 +37,17 @@ Aunque no se logró completar el proyecto en su totalidad, se entrega la prácti
 ## Cambios
 Tras dar con el problema que no dejaba lanzar completamente los launchers, pudimos lanzar el launcher de los controladores y el de moveit que nos permite ya empezar a planear.
 Cuando fuimos a lanzar el launcher para poder lanzar el gazebo con el mundo proporcionado por los profesores, nos encontroamos con que por la version que tenemos ros_gz_brige es un packete que no encuenrrta, hemos intentado instalarlo pero por la vercion que tengo no me lo permite, o no he consedguido hacerlo.
+
+
+## Ros2 Bags
+![image](https://github.com/user-attachments/assets/68139763-9a7b-4762-b646-bc79b19b2636)
+aqui se muestra una imagen del ros2 bag en el cual recojo toda la informacion que se muestra al lanzar todos los launcher, en el que se muestrar toda la informacion de todos los topic
+
+
+## Video lanzamiento de launchers
+[Screencast from 07-04-2025 11:54:13 AM.webm](https://github.com/user-attachments/assets/a4e3dacd-7c0f-4c00-9ddc-2abbc66c5ef5)
+
+
 ## Como continuaria
 Si todo funcionara correctamente, lanzariamos todos los launchers, y podrias empezar a teleoperar el robot, y realizar el plan mediante la herramienta de Moveit. 
 Realizariamos un ros bag record de la informacion de las fuerzas que realizan las articulaciones del brazo y con esa informacion podriamos graficarla. 
