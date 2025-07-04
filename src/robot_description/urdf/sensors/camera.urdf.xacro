@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<robot name="rover_description" xmlns:xacro="http://wiki.ros.org/xacro">
+
+
+
+  <!-- Macro de cámara -->
+  <xacro:macro name="camera" params="parent">
+
+    <xacro:property name="horizontal_fov" value="1.39626"/>
+    <xacro:property name="video_width" value="640"/>
+    <xacro:property name="video_height" value="480"/>
+    <link name="front_camera_link">
+      <visual name="front_camera_link">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.05 0.05 0.05"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="front_camera_joint" type="fixed">
+      <parent link="${parent}"/>
+      <child link="front_camera_link"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <gazebo reference="front_camera_link">
+      <sensor name="front_camera_sensor" type="camera">
+        <visualize>true</visualize>
+        <update_rate>30</update_rate>
+        <topic>/front_camera/image</topic>
+        <camera>
+          <horizontal_fov>${horizontal_fov}</horizontal_fov>
+          <image>
+            <width>${video_width}</width>
+            <height>${video_height}</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.10</near>
+            <far>15.0</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+          <optical_frame_id>front_camera_link</optical_frame_id>
+        </camera>
+      </sensor>
+    </gazebo>
+  </xacro:macro>
+</robot>

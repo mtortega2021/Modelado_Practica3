@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<robot name="rover_description" xmlns:xacro="http:/wiki:ros.org/xacro">
+  <xacro:macro name="gripper_camera" params="parent">
+  <link name="gripper_camera_link">
+    <visual name="gripper_camera">
+      <origin xyz="0 0 0" rpy= "0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+
+    </visual>
+  </link>
+  <joint name="gripper_camera_joint" type="fixed">
+    <parent link="${parent}"/>
+    <child link="gripper_camera_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <gazebo reference="gripper_camera_frame">
+    <sensor name="gripper_camera_sensor" type="camera">
+      <visualize>true</visualize>
+      <update_rate>30</update_rate>
+      <topic>/gripper_camera/image</topic>
+      <camera>
+        <horizontal_fov>${radians(float(horizontal_fov))}</horizontal_fov>
+        <image>
+          <width>${video_width}</width>
+          <height>${video_height}</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.10</near>
+          <far>15.0</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+        <optical_frame_id>gripper_camera_frame</optical_frame_id>
+      </camera>
+    </sensor>
+  </gazebo>
+  </xacro:macro>
+</robot>

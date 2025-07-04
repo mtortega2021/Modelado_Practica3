@@ -1,0 +1,27 @@
+# MoveIt uses this configuration for controller management
+
+moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
+use_sim_time: true
+moveit_simple_controller_manager:
+  controller_names:
+    - scara_controller
+    - gripper_controller
+
+  scara_controller:
+    type: FollowJointTrajectory
+    joints:
+      - joint_1_arm
+      - joint_arm_2
+      - joint_arm_4_prismatic
+      - joint_gripper_rotacion
+    action_ns : follow_joint_trajectory
+    default: true
+    use_sin_time: true
+  gripper_controller:
+    type: FollowJointTrajectory
+    joints:
+      - joint_gripper_left
+      - joint_gripper_right
+    action_ns : follow_joint_trajectory
+    default: true
+    use_sin_time: true

@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<robot name="rover_description" xmlns:xacro="http:/wiki:ros.org/xacro">
+  <xacro:macro name="robot_base">
+
+   <link name="base_footprint">
+    <visual name="Cube.000.001.002">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.001" />
+      </geometry>
+    </visual>
+    <collision name="Cube.000.001.002.000">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.001" />
+      </geometry>
+    </collision>
+   </link>
+   <link name="base_link">
+    <collision name="robot_base_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <box size="1.50000 2.50000 0.25000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="3.15625" ixy="0.00000" ixz="0.00000" iyy="1.15625" iyz="0.00000" izz="4.25000"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="6.00000"/>
+    </inertial>
+    <visual name="robot_base">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <box size="1.50000 2.50000 0.25000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="truck_front_link">
+    <collision name="truck_front_collision">
+      <origin rpy="3.14159 0.00000 3.14159" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <box size="1.50000 0.05000 0.40000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.01354" ixy="0.00000" ixz="-0.00000" iyy="0.20083" iyz="0.00000" izz="0.18771"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="1.00000"/>
+    </inertial>
+    <visual name="truck_front">
+      <origin rpy="3.14159 0.00000 3.14159" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <box size="1.50000 0.05000 0.40000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="trunk_back_link">
+    <collision name="trunk_back_collision">
+      <origin rpy="3.14159 0.00000 3.14159" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <box size="1.50000 0.05000 0.40000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.01354" ixy="0.00000" ixz="-0.00000" iyy="0.20083" iyz="0.00000" izz="0.18771"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="1.00000"/>
+    </inertial>
+    <visual name="trunk_back">
+      <origin rpy="3.14159 0.00000 3.14159" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <box size="1.50000 0.05000 0.40000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="trunk_left_link">
+    <collision name="trunk_left_collision">
+      <origin rpy="3.14159 0.00000 3.14159" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <box size="0.05000 1.50000 0.40000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.20083" ixy="0.00000" ixz="0.00000" iyy="0.01354" iyz="0.00000" izz="0.18771"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="1.00000"/>
+    </inertial>
+    <visual name="trunk_left">
+      <origin rpy="3.14159 0.00000 3.14159" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <box size="0.05000 1.50000 0.40000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="trunk_right_link">
+    <collision name="trunk_right_collision">
+      <origin rpy="3.14159 0.00000 3.14159" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <box size="0.05000 1.50000 0.40000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.20083" ixy="0.00000" ixz="0.00000" iyy="0.01354" iyz="0.00000" izz="0.18771"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <mass value="1.00000"/>
+    </inertial>
+    <visual name="trunk_right">
+      <origin rpy="3.14159 0.00000 3.14159" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <box size="0.05000 1.50000 0.40000"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="base_footprint_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 1.570795" xyz="0.00000 0.00000 1.00000"/>
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+  </joint>
+  <joint name="joint_back_truck_2_base" type="fixed">
+    <origin rpy="3.14159 -0.00000 3.14159" xyz="0.00000 1.15000 0.30000"/>
+    <parent link="base_link"/>
+    <child link="trunk_back_link"/>
+  </joint>
+  <joint name="joint_front_truck_2_base" type="fixed">
+    <origin rpy="3.14159 -0.00000 3.14159" xyz="0.00000 -0.32000 0.30000"/>
+    <parent link="base_link"/>
+    <child link="truck_front_link"/>
+  </joint>
+  <joint name="joint_left_truck_2_base" type="fixed">
+    <origin rpy="3.14159 -0.00000 3.14159" xyz="0.72000 0.40000 0.30000"/>
+    <parent link="base_link"/>
+    <child link="trunk_left_link"/>
+  </joint>
+  <joint name="joint_right_truck_2_base" type="fixed">
+    <origin rpy="3.14159 -0.00000 3.14159" xyz="-0.72000 0.40000 0.30000"/>
+    <parent link="base_link"/>
+    <child link="trunk_right_link"/>
+  </joint>
+  </xacro:macro>
+</robot>

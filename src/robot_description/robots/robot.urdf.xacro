@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<robot name="rover_description" xmlns:xacro="http:/wiki:ros.org/xacro">
+
+
+  <!-- Includes -->
+  <xacro:include filename="$(find rover_description)/urdf/base/robot_base.urdf.xacro"/>
+  <xacro:include filename="$(find rover_description)/urdf/wheels/wheels.urdf.xacro"/>
+  <xacro:include filename="$(find rover_description)/urdf/arm/arm.urdf.xacro"/>
+  <xacro:include filename="$(find rover_description)/urdf/sensors/camera.urdf.xacro"/>
+  <!-- <xacro:include filename="$(find rover_description)/urdf/sensors/gripper_camera.urdf.xacro"/> -->
+  <xacro:include filename="$(find rover_description)/urdf/sensors/imu_sensor.urdf.xacro"/>
+  <!-- Properties -->
+  <xacro:property name="PI" value="3.1415926535897931"/>
+  <xacro:property name="wheel_offset_x" value="0.95"/>
+  <xacro:property name="wheel_offset_y" value="0.95"/>
+  <xacro:property name="wheel_offset_z" value="-0.38"/>
+  <xacro:property name="arm_offset_x" value="0.0"/>
+  <xacro:property name="arm_offset_y" value="0.82"/>
+  <xacro:property name="arm_offset_z" value="0.69"/>
+
+  <!-- Arguments -->
+  <xacro:arg name="robot_ns" default=""/>
+  <xacro:arg name="prefix" default=""/>
+
+  <!-- Robot Parts -->
+
+  <!-- Base -->
+  <!-- <xacro:utils/> -->
+
+    <!-- base -->
+    <xacro:robot_base/>
+
+    <!-- wheels -->
+    <xacro:wheels parent="base_link"/>
+
+    <!-- arm -->
+    <xacro:arm parent="base_link"/>
+    <!-- <xacro:gripper parent="arm_gripper_link"/> -->
+
+    <!-- sensors -->
+    <xacro:camera parent="base_link"/>
+    <!-- <xacro:gripper_camera parent="gripper_base_link"/> -->
+    <xacro:sensor_imu parent="base_link"/>
+
+    <!-- gazebo ROS control plugins -->
+    <xacro:include filename="$(find rover_description)/urdf/ros2_control.urdf.xacro"/>
+    <xacro:arg name="config_controllers" default="$(find rover_description)/config/rover_controllers.yaml"/>
+    <xacro:arg name="update_rate" default="20"/>
+    <xacro:ros2_control/>
+
+</robot>

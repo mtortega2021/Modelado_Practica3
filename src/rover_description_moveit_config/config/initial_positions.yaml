@@ -1,0 +1,9 @@
+# Default initial positions for rover_description's ros2_control fake system
+
+initial_positions:
+  joint_1_arm: 0
+  joint_arm_2: 0
+  joint_arm_4_prismatic: 0
+  joint_gripper_left: 0
+  joint_gripper_right: 0
+  joint_gripper_rotacion: 0
