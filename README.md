@@ -45,7 +45,12 @@ aqui se muestra una imagen del ros2 bag en el cual recojo toda la informacion qu
 
 
 ## Video lanzamiento de launchers
-[Screencast from 07-04-2025 11:54:13 AM.webm](https://github.com/user-attachments/assets/a4e3dacd-7c0f-4c00-9ddc-2abbc66c5ef5)
+Lanzamiento de launchers:
+
+[modelado_grabacionPantalla.webm](https://github.com/user-attachments/assets/d37dc5d7-54e6-4968-a9a3-4564afe8e5bb)
+
+Imagen de rviz: 
+
 v![image](https://github.com/user-attachments/assets/bd81c7ef-1bf7-4eb2-b53d-9e75b88a289c)
 
 
