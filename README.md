@@ -53,6 +53,10 @@ Imagen de rviz:
 
 v![image](https://github.com/user-attachments/assets/bd81c7ef-1bf7-4eb2-b53d-9e75b88a289c)
 
+## Lanzamiento del launcher de gazebo
+
+Gazebo por los motivos que se explican, no se lanza, pero al intentar lanzar el laucnher podemos observar en esta captura que esta reconociendo todos los links del robot.
+![image](https://github.com/user-attachments/assets/474e7071-edd9-43ac-91ed-a2aeac07a5cf)
 
 ## Como continuaria
 Si todo funcionara correctamente, lanzariamos todos los launchers, y podrias empezar a teleoperar el robot, y realizar el plan mediante la herramienta de Moveit. 
