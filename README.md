@@ -49,6 +49,11 @@ Lanzamiento de launchers:
 
 [modelado_grabacionPantalla.webm](https://github.com/user-attachments/assets/d37dc5d7-54e6-4968-a9a3-4564afe8e5bb)
 
+En este video se lanzan los siguientes launchers:
+* ros2 launch rover_description_moveit_config move_group.launch.py
+* ros2 launch rover_description robot_controllers.launch.py
+* ros2 launch rover_description robot_gazebo.launch.py world:=urjc_excavation_msr
+
 Imagen de rviz: 
 
 v![image](https://github.com/user-attachments/assets/bd81c7ef-1bf7-4eb2-b53d-9e75b88a289c)
